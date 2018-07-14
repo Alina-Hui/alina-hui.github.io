@@ -143,6 +143,46 @@
 
 
 
+  $(document).ready(function () {
+    var SelectText = function(element) {
+        var doc = document
+            , text = element
+            , range, selection
+        ;    
+        if (doc.body.createTextRange) {
+            range = document.body.createTextRange();
+            range.moveToElementText(text);
+            range.select();
+        } else if (window.getSelection) {
+            selection = window.getSelection();        
+            range = document.createRange();
+            range.selectNodeContents(text);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+    };
+
+    $(".code").each(function() {
+        var code = $(this).get(0);
+        var button_html = 
+            '<div style="position: fixed;'                                                               +
+                        'right: 3%;'                                                                     +
+                        'margin-top: 5px;'                                                               +
+                        'font-family: consolas, Menlo, \'PingFang SC\', \'Microsoft YaHei\', monospace;' +
+                        'font-size: 10px;'                                                               +
+                        'cursor: pointer;'                                                               +
+                        'color: #e31436;'                                                                +
+                        '">'                                                                             +
+            '<span>全选</span>'                                                                          +
+            '</div>';
+        var button = $(button_html);
+
+        $(button).click(function() {
+            SelectText(code);
+        });
+        $(button).insertBefore(this);
+    });
+});
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -209,12 +249,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-machine-learning">
-          <a href="/categories/machine-learning" rel="section">
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/algorithm" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-battery-full"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-circle"></i> <br />
             
-            Machine Learning
+            Algorithm
           </a>
         </li>
       
@@ -229,82 +269,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-nlp">
-          <a href="/categories/nlp" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-beer"></i> <br />
-            
-            NLP
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-algorithm">
-          <a href="/categories/algorithm" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-circle"></i> <br />
-            
-            Algorithm
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-python">
-          <a href="/categories/python" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-cloud"></i> <br />
-            
-            Python
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-c++">
           <a href="/categories/c++" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-connectdevelop"></i> <br />
             
             C++
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-java">
-          <a href="/categories/java" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-delicious"></i> <br />
-            
-            Java
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-r">
-          <a href="/categories/r" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            R
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-network-security">
-          <a href="/categories/network-security" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-hotel"></i> <br />
-            
-            Network Security
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-linux">
-          <a href="/categories/linux" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
-            
-            LINUX
           </a>
         </li>
       
@@ -319,12 +289,42 @@
         </li>
       
         
-        <li class="menu-item menu-item-reading">
-          <a href="/categories/reading" rel="section">
+        <li class="menu-item menu-item-german">
+          <a href="/categories/german" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-language"></i> <br />
             
-            Reading
+            German
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-java">
+          <a href="/categories/java" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-delicious"></i> <br />
+            
+            Java
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-linux">
+          <a href="/categories/linux" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            LINUX
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-machine-learning">
+          <a href="/categories/machine-learning" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-battery-full"></i> <br />
+            
+            Machine Learning
           </a>
         </li>
       
@@ -335,6 +335,66 @@
               <i class="menu-item-icon fa fa-fw fa-tv"></i> <br />
             
             Movies&TV shows
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-math">
+          <a href="/categories/math" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bolt"></i> <br />
+            
+            Math
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nlp">
+          <a href="/categories/nlp" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-beer"></i> <br />
+            
+            NLP
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-network-security">
+          <a href="/categories/network-security" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-hotel"></i> <br />
+            
+            Network Security
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-python">
+          <a href="/categories/python" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cloud"></i> <br />
+            
+            Python
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-r">
+          <a href="/categories/r" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            R
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/categories/reading" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            Reading
           </a>
         </li>
       
@@ -435,7 +495,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/12/cjjisnk6u001fu8vyd6kbxykn/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/14/cjjkk8wsr0000egvykxf26p26/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -454,7 +514,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/12/cjjisnk6u001fu8vyd6kbxykn/" itemprop="url">科目四</a></h1>
+                <a class="post-title-link" href="/2018/07/14/cjjkk8wsr0000egvykxf26p26/" itemprop="url">Equations of antiquity 古代的定理</a></h1>
         
 
         <div class="post-meta">
@@ -466,8 +526,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-12T17:10:14+08:00">
-                2018-07-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-14T02:33:04+08:00">
+                2018-07-14
               </time>
             
 
@@ -482,8 +542,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-07-13T00:34:21+08:00">
-                2018-07-13
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-14T06:38:13+08:00">
+                2018-07-14
               </time>
             
           </span>
@@ -501,8 +561,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index">
-                    <span itemprop="name">Other</span>
+                  <a href="/categories/math/" itemprop="url" rel="index">
+                    <span itemprop="name">Math</span>
                   </a>
                 </span>
 
@@ -532,7 +592,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  637
+                  399
                 </span>
               
 
@@ -548,7 +608,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  1
                 </span>
               
             </div>
@@ -571,12 +631,12 @@
       
         
         <div class="post-intro" style="font-style: italic; font-size: 18px; text-align: center">
-          from 2018年科目四题库(1332题目)
+          from《THE UNIVERSE IN ZERO WORDS 无言的宇宙》序，Part1
         </div>
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/12/cjjisnk6u001fu8vyd6kbxykn/">
+            <a class="btn" href="/2018/07/14/cjjkk8wsr0000egvykxf26p26/">
               Read more &raquo;
             </a>
           </div>
@@ -636,7 +696,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/11/cjjisnjwy0001u8vyqkhc6dxf/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/14/cjjkblp1j000dmsvyuyr3rpp0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -655,7 +715,409 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/11/cjjisnjwy0001u8vyqkhc6dxf/" itemprop="url">Inside No.9 S01 E01</a></h1>
+                <a class="post-title-link" href="/2018/07/14/cjjkblp1j000dmsvyuyr3rpp0/" itemprop="url">About this category</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-14T01:38:08+08:00">
+                2018-07-14
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-14T02:18:12+08:00">
+                2018-07-14
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/german/" itemprop="url" rel="index">
+                    <span itemprop="name">German</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  41
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+        <div class="post-intro" style="font-style: italic; font-size: 18px; text-align: center">
+          why I set this category
+        </div>
+          <!--noindex-->
+          <!--
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/14/cjjkblp1j000dmsvyuyr3rpp0/">
+              Read more &raquo;
+            </a>
+          </div>
+          -->
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/12/cjjkblp24000zmsvypk8maydq/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alina Hui">
+      <meta itemprop="intro" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alina Hui">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/12/cjjkblp24000zmsvypk8maydq/" itemprop="url">科目四</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-12T17:10:14+08:00">
+                2018-07-12
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-13T10:58:42+08:00">
+                2018-07-13
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/other/" itemprop="url" rel="index">
+                    <span itemprop="name">Other</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  699
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+        <div class="post-intro" style="font-style: italic; font-size: 18px; text-align: center">
+          from 2018年科目四题库(1332题)
+        </div>
+          <!--noindex-->
+          <!--
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/12/cjjkblp24000zmsvypk8maydq/">
+              Read more &raquo;
+            </a>
+          </div>
+          -->
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/11/cjjkblp130002msvy47yjwc39/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alina Hui">
+      <meta itemprop="intro" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alina Hui">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/11/cjjkblp130002msvy47yjwc39/" itemprop="url">Inside No.9 S01 E01</a></h1>
         
 
         <div class="post-meta">
@@ -777,7 +1239,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/11/cjjisnjwy0001u8vyqkhc6dxf/#more" rel="contents">
+            <a class="btn" href="/2018/07/11/cjjkblp130002msvy47yjwc39/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -837,7 +1299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/09/cjjisnk73001nu8vywab9sopx/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/09/cjjkblp1v000nmsvyhflj474g/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -856,7 +1318,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/09/cjjisnk73001nu8vywab9sopx/" itemprop="url">介绍Python对象类型</a></h1>
+                <a class="post-title-link" href="/2018/07/09/cjjkblp1v000nmsvyhflj474g/" itemprop="url">介绍Python对象类型</a></h1>
         
 
         <div class="post-meta">
@@ -884,8 +1346,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-07-12T17:16:53+08:00">
-                2018-07-12
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-15T02:40:10+08:00">
+                2018-07-15
               </time>
             
           </span>
@@ -934,7 +1396,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  554
+                  602
                 </span>
               
 
@@ -978,7 +1440,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/09/cjjisnk73001nu8vywab9sopx/">
+            <a class="btn" href="/2018/07/09/cjjkblp1v000nmsvyhflj474g/">
               Read more &raquo;
             </a>
           </div>
@@ -1038,7 +1500,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/09/cjjisnjxl000bu8vytj5xdmrk/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/09/cjjkblp1e0008msvyfjww70u8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -1057,7 +1519,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/09/cjjisnjxl000bu8vytj5xdmrk/" itemprop="url">Overview of Supervised Learning</a></h1>
+                <a class="post-title-link" href="/2018/07/09/cjjkblp1e0008msvyfjww70u8/" itemprop="url">Overview of Supervised Learning</a></h1>
         
 
         <div class="post-meta">
@@ -1179,7 +1641,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/09/cjjisnjxl000bu8vytj5xdmrk/">
+            <a class="btn" href="/2018/07/09/cjjkblp1e0008msvyfjww70u8/">
               Read more &raquo;
             </a>
           </div>
@@ -1239,7 +1701,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/08/cjjisnk6r001cu8vyzmohoh08/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/08/cjjkblp2d0019msvys5io41sd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -1258,7 +1720,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/08/cjjisnk6r001cu8vyzmohoh08/" itemprop="url">部署操作系统</a></h1>
+                <a class="post-title-link" href="/2018/07/08/cjjkblp2d0019msvys5io41sd/" itemprop="url">部署操作系统</a></h1>
         
 
         <div class="post-meta">
@@ -1380,7 +1842,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/08/cjjisnk6r001cu8vyzmohoh08/">
+            <a class="btn" href="/2018/07/08/cjjkblp2d0019msvys5io41sd/">
               Read more &raquo;
             </a>
           </div>
@@ -1440,7 +1902,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/08/cjjisnjx40004u8vyxjshca5i/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/08/cjjkblp0v0000msvyt9375n9w/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -1459,7 +1921,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/08/cjjisnjx40004u8vyxjshca5i/" itemprop="url">Artificial Intelligence：Its Roots and Scope</a></h1>
+                <a class="post-title-link" href="/2018/07/08/cjjkblp0v0000msvyt9375n9w/" itemprop="url">Artificial Intelligence：Its Roots and Scope</a></h1>
         
 
         <div class="post-meta">
@@ -1581,7 +2043,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/08/cjjisnjx40004u8vyxjshca5i/">
+            <a class="btn" href="/2018/07/08/cjjkblp0v0000msvyt9375n9w/">
               Read more &raquo;
             </a>
           </div>
@@ -1641,7 +2103,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/07/cjjisnk71001ku8vyo9rvvnqp/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/07/cjjkblp2k001hmsvywg6cjhel/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -1660,7 +2122,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/07/cjjisnk71001ku8vyo9rvvnqp/" itemprop="url">隐马尔可夫模型</a></h1>
+                <a class="post-title-link" href="/2018/07/07/cjjkblp2k001hmsvywg6cjhel/" itemprop="url">隐马尔可夫模型</a></h1>
         
 
         <div class="post-meta">
@@ -1782,7 +2244,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/07/cjjisnk71001ku8vyo9rvvnqp/">
+            <a class="btn" href="/2018/07/07/cjjkblp2k001hmsvywg6cjhel/">
               Read more &raquo;
             </a>
           </div>
@@ -1842,7 +2304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/06/cjjisnjxh000au8vy2calpu8t/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/06/cjjkblp1y000rmsvyq9igvv60/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -1861,7 +2323,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/06/cjjisnjxh000au8vy2calpu8t/" itemprop="url">使用Mathjax</a></h1>
+                <a class="post-title-link" href="/2018/07/06/cjjkblp1y000rmsvyq9igvv60/" itemprop="url">使用Mathjax</a></h1>
         
 
         <div class="post-meta">
@@ -1983,409 +2445,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/06/cjjisnjxh000au8vy2calpu8t/">
-              Read more &raquo;
-            </a>
-          </div>
-          -->
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/06/cjjisnk6x001hu8vynz0phdul/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alina Hui">
-      <meta itemprop="intro" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Alina Hui">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/06/cjjisnk6x001hu8vynz0phdul/" itemprop="url">使用什么工具写博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-06T18:01:09+08:00">
-                2018-07-06
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2018-07-08T14:19:48+08:00">
-                2018-07-08
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index">
-                    <span itemprop="name">Other</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  330
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-        <div class="post-intro" style="font-style: italic; font-size: 18px; text-align: center">
-          What tools used to write blog
-        </div>
-          <!--noindex-->
-          <!--
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/06/cjjisnk6x001hu8vynz0phdul/">
-              Read more &raquo;
-            </a>
-          </div>
-          -->
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/03/cjjisnjz9000yu8vyotg86gmu/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alina Hui">
-      <meta itemprop="intro" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Alina Hui">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/03/cjjisnjz9000yu8vyotg86gmu/" itemprop="url">我们的宇宙图像</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-03T02:25:05+08:00">
-                2018-07-03
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2018-07-09T15:40:30+08:00">
-                2018-07-09
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/reading/" itemprop="url" rel="index">
-                    <span itemprop="name">Reading</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  252
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-        <div class="post-intro" style="font-style: italic; font-size: 18px; text-align: center">
-          from《时间简史 A BRIEF HISTORY OF TIME》 Chapter1
-        </div>
-          <!--noindex-->
-          <!--
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/03/cjjisnjz9000yu8vyotg86gmu/">
+            <a class="btn" href="/2018/07/06/cjjkblp1y000rmsvyq9igvv60/">
               Read more &raquo;
             </a>
           </div>
@@ -2482,7 +2542,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2493,7 +2553,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2504,7 +2564,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2566,7 +2626,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Totol Word Count:5.3k</span>
+  <span class="post-count">Totol Word Count:5.9k</span>
 </div>
         
 

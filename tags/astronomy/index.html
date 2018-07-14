@@ -143,6 +143,46 @@
 
 
 
+  $(document).ready(function () {
+    var SelectText = function(element) {
+        var doc = document
+            , text = element
+            , range, selection
+        ;    
+        if (doc.body.createTextRange) {
+            range = document.body.createTextRange();
+            range.moveToElementText(text);
+            range.select();
+        } else if (window.getSelection) {
+            selection = window.getSelection();        
+            range = document.createRange();
+            range.selectNodeContents(text);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+    };
+
+    $(".code").each(function() {
+        var code = $(this).get(0);
+        var button_html = 
+            '<div style="position: fixed;'                                                               +
+                        'right: 3%;'                                                                     +
+                        'margin-top: 5px;'                                                               +
+                        'font-family: consolas, Menlo, \'PingFang SC\', \'Microsoft YaHei\', monospace;' +
+                        'font-size: 10px;'                                                               +
+                        'cursor: pointer;'                                                               +
+                        'color: #e31436;'                                                                +
+                        '">'                                                                             +
+            '<span>全选</span>'                                                                          +
+            '</div>';
+        var button = $(button_html);
+
+        $(button).click(function() {
+            SelectText(code);
+        });
+        $(button).insertBefore(this);
+    });
+});
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -208,12 +248,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-machine-learning">
-          <a href="/categories/machine-learning" rel="section">
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/algorithm" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-battery-full"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-circle"></i> <br />
             
-            Machine Learning
+            Algorithm
           </a>
         </li>
       
@@ -228,82 +268,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-nlp">
-          <a href="/categories/nlp" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-beer"></i> <br />
-            
-            NLP
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-algorithm">
-          <a href="/categories/algorithm" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-circle"></i> <br />
-            
-            Algorithm
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-python">
-          <a href="/categories/python" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-cloud"></i> <br />
-            
-            Python
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-c++">
           <a href="/categories/c++" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-connectdevelop"></i> <br />
             
             C++
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-java">
-          <a href="/categories/java" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-delicious"></i> <br />
-            
-            Java
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-r">
-          <a href="/categories/r" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            R
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-network-security">
-          <a href="/categories/network-security" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-hotel"></i> <br />
-            
-            Network Security
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-linux">
-          <a href="/categories/linux" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
-            
-            LINUX
           </a>
         </li>
       
@@ -318,12 +288,42 @@
         </li>
       
         
-        <li class="menu-item menu-item-reading">
-          <a href="/categories/reading" rel="section">
+        <li class="menu-item menu-item-german">
+          <a href="/categories/german" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-language"></i> <br />
             
-            Reading
+            German
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-java">
+          <a href="/categories/java" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-delicious"></i> <br />
+            
+            Java
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-linux">
+          <a href="/categories/linux" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            LINUX
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-machine-learning">
+          <a href="/categories/machine-learning" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-battery-full"></i> <br />
+            
+            Machine Learning
           </a>
         </li>
       
@@ -334,6 +334,66 @@
               <i class="menu-item-icon fa fa-fw fa-tv"></i> <br />
             
             Movies&TV shows
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-math">
+          <a href="/categories/math" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bolt"></i> <br />
+            
+            Math
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nlp">
+          <a href="/categories/nlp" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-beer"></i> <br />
+            
+            NLP
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-network-security">
+          <a href="/categories/network-security" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-hotel"></i> <br />
+            
+            Network Security
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-python">
+          <a href="/categories/python" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cloud"></i> <br />
+            
+            Python
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-r">
+          <a href="/categories/r" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            R
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/categories/reading" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            Reading
           </a>
         </li>
       
@@ -439,7 +499,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/03/cjjisnjz9000yu8vyotg86gmu/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/03/cjjkblp22000xmsvyxelmj36w/" itemprop="url">
               
                 <span itemprop="name">我们的宇宙图像</span>
               
@@ -511,7 +571,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -522,7 +582,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -533,7 +593,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -595,7 +655,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Totol Word Count:5.3k</span>
+  <span class="post-count">Totol Word Count:5.9k</span>
 </div>
         
 

@@ -143,6 +143,46 @@
 
 
 
+  $(document).ready(function () {
+    var SelectText = function(element) {
+        var doc = document
+            , text = element
+            , range, selection
+        ;    
+        if (doc.body.createTextRange) {
+            range = document.body.createTextRange();
+            range.moveToElementText(text);
+            range.select();
+        } else if (window.getSelection) {
+            selection = window.getSelection();        
+            range = document.createRange();
+            range.selectNodeContents(text);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+    };
+
+    $(".code").each(function() {
+        var code = $(this).get(0);
+        var button_html = 
+            '<div style="position: fixed;'                                                               +
+                        'right: 3%;'                                                                     +
+                        'margin-top: 5px;'                                                               +
+                        'font-family: consolas, Menlo, \'PingFang SC\', \'Microsoft YaHei\', monospace;' +
+                        'font-size: 10px;'                                                               +
+                        'cursor: pointer;'                                                               +
+                        'color: #e31436;'                                                                +
+                        '">'                                                                             +
+            '<span>全选</span>'                                                                          +
+            '</div>';
+        var button = $(button_html);
+
+        $(button).click(function() {
+            SelectText(code);
+        });
+        $(button).insertBefore(this);
+    });
+});
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -208,12 +248,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-machine-learning">
-          <a href="/categories/machine-learning" rel="section">
+        <li class="menu-item menu-item-algorithm">
+          <a href="/categories/algorithm" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-battery-full"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-circle"></i> <br />
             
-            Machine Learning
+            Algorithm
           </a>
         </li>
       
@@ -228,82 +268,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-nlp">
-          <a href="/categories/nlp" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-beer"></i> <br />
-            
-            NLP
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-algorithm">
-          <a href="/categories/algorithm" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-circle"></i> <br />
-            
-            Algorithm
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-python">
-          <a href="/categories/python" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-cloud"></i> <br />
-            
-            Python
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-c++">
           <a href="/categories/c++" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-connectdevelop"></i> <br />
             
             C++
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-java">
-          <a href="/categories/java" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-delicious"></i> <br />
-            
-            Java
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-r">
-          <a href="/categories/r" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            R
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-network-security">
-          <a href="/categories/network-security" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-hotel"></i> <br />
-            
-            Network Security
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-linux">
-          <a href="/categories/linux" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
-            
-            LINUX
           </a>
         </li>
       
@@ -318,12 +288,42 @@
         </li>
       
         
-        <li class="menu-item menu-item-reading">
-          <a href="/categories/reading" rel="section">
+        <li class="menu-item menu-item-german">
+          <a href="/categories/german" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-language"></i> <br />
             
-            Reading
+            German
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-java">
+          <a href="/categories/java" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-delicious"></i> <br />
+            
+            Java
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-linux">
+          <a href="/categories/linux" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-leaf"></i> <br />
+            
+            LINUX
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-machine-learning">
+          <a href="/categories/machine-learning" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-battery-full"></i> <br />
+            
+            Machine Learning
           </a>
         </li>
       
@@ -334,6 +334,66 @@
               <i class="menu-item-icon fa fa-fw fa-tv"></i> <br />
             
             Movies&TV shows
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-math">
+          <a href="/categories/math" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bolt"></i> <br />
+            
+            Math
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nlp">
+          <a href="/categories/nlp" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-beer"></i> <br />
+            
+            NLP
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-network-security">
+          <a href="/categories/network-security" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-hotel"></i> <br />
+            
+            Network Security
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-python">
+          <a href="/categories/python" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cloud"></i> <br />
+            
+            Python
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-r">
+          <a href="/categories/r" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            R
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/categories/reading" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            Reading
           </a>
         </li>
       
@@ -433,7 +493,7 @@
         
           
         
-        Um..! 16 posts in total. Keep on posting.
+        Um..! 18 posts in total. Keep on posting.
       </span>
 
       
@@ -457,7 +517,81 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/12/cjjisnk6u001fu8vyd6kbxykn/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/14/cjjkk8wsr0000egvykxf26p26/" itemprop="url">
+              
+                <span itemprop="name">Equations of antiquity 古代的定理</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-07-14T02:33:04+08:00"
+              content="2018-07-14" >
+          07-14
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/07/14/cjjkblp1j000dmsvyuyr3rpp0/" itemprop="url">
+              
+                <span itemprop="name">About this category</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-07-14T01:38:08+08:00"
+              content="2018-07-14" >
+          07-14
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/07/12/cjjkblp24000zmsvypk8maydq/" itemprop="url">
               
                 <span itemprop="name">科目四</span>
               
@@ -494,7 +628,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/11/cjjisnjwy0001u8vyqkhc6dxf/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/11/cjjkblp130002msvy47yjwc39/" itemprop="url">
               
                 <span itemprop="name">Inside No.9 S01 E01</span>
               
@@ -531,7 +665,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/09/cjjisnk73001nu8vywab9sopx/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/09/cjjkblp1v000nmsvyhflj474g/" itemprop="url">
               
                 <span itemprop="name">介绍Python对象类型</span>
               
@@ -568,7 +702,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/09/cjjisnjxl000bu8vytj5xdmrk/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/09/cjjkblp1e0008msvyfjww70u8/" itemprop="url">
               
                 <span itemprop="name">Overview of Supervised Learning</span>
               
@@ -605,7 +739,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/08/cjjisnk6r001cu8vyzmohoh08/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/08/cjjkblp2d0019msvys5io41sd/" itemprop="url">
               
                 <span itemprop="name">部署操作系统</span>
               
@@ -642,7 +776,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/08/cjjisnjx40004u8vyxjshca5i/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/08/cjjkblp0v0000msvyt9375n9w/" itemprop="url">
               
                 <span itemprop="name">Artificial Intelligence：Its Roots and Scope</span>
               
@@ -679,7 +813,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/07/cjjisnk71001ku8vyo9rvvnqp/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/07/cjjkblp2k001hmsvywg6cjhel/" itemprop="url">
               
                 <span itemprop="name">隐马尔可夫模型</span>
               
@@ -716,7 +850,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/06/cjjisnjxh000au8vy2calpu8t/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/06/cjjkblp1y000rmsvyq9igvv60/" itemprop="url">
               
                 <span itemprop="name">使用Mathjax</span>
               
@@ -729,80 +863,6 @@
               datetime="2018-07-06T18:01:33+08:00"
               content="2018-07-06" >
           07-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/06/cjjisnk6x001hu8vynz0phdul/" itemprop="url">
-              
-                <span itemprop="name">使用什么工具写博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-06T18:01:09+08:00"
-              content="2018-07-06" >
-          07-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/03/cjjisnjz9000yu8vyotg86gmu/" itemprop="url">
-              
-                <span itemprop="name">我们的宇宙图像</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-03T02:25:05+08:00"
-              content="2018-07-03" >
-          07-03
         </time>
       </div>
 
@@ -868,7 +928,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -879,7 +939,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -890,7 +950,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -952,7 +1012,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Totol Word Count:5.3k</span>
+  <span class="post-count">Totol Word Count:5.9k</span>
 </div>
         
 
