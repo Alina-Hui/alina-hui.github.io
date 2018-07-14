@@ -144,44 +144,44 @@
 
 
   $(document).ready(function () {
-    var SelectText = function(element) {
-        var doc = document
-            , text = element
-            , range, selection
-        ;    
-        if (doc.body.createTextRange) {
-            range = document.body.createTextRange();
-            range.moveToElementText(text);
-            range.select();
-        } else if (window.getSelection) {
-            selection = window.getSelection();        
-            range = document.createRange();
-            range.selectNodeContents(text);
-            selection.removeAllRanges();
-            selection.addRange(range);
-        }
-    };
+	var SelectText = function(element) {
+		var doc = document
+			, text = element
+			, range, selection
+		;    
+		if (doc.body.createTextRange) {
+			range = document.body.createTextRange();
+			range.moveToElementText(text);
+			range.select();
+		} else if (window.getSelection) {
+			selection = window.getSelection();        
+			range = document.createRange();
+			range.selectNodeContents(text);
+			selection.removeAllRanges();
+			selection.addRange(range);
+		}
+	};
 
-    $(".code").each(function() {
-        var code = $(this).get(0);
-        var button_html = 
-            '<div style="position: fixed;'                                                               +
-                        'right: 3%;'                                                                     +
-                        'margin-top: 5px;'                                                               +
-                        'font-family: consolas, Menlo, \'PingFang SC\', \'Microsoft YaHei\', monospace;' +
-                        'font-size: 10px;'                                                               +
-                        'cursor: pointer;'                                                               +
-                        'color: #e31436;'                                                                +
-                        '">'                                                                             +
-            '<span>全选</span>'                                                                          +
-            '</div>';
-        var button = $(button_html);
+	$(".code").each(function() {
+		var code = $(this).get(0);
+		var button_html = 
+			'<div style="position: fixed;'                                                               +
+						'right: 3%;'                                                                     +
+						'margin-top: 5px;'                                                               +
+						'font-family: consolas, Menlo, \'PingFang SC\', \'Microsoft YaHei\', monospace;' +
+						'font-size: 10px;'                                                               +
+						'cursor: pointer;'                                                               +
+						'color: #e31436;'                                                                +
+						'">'                                                                             +
+			'<span>全选</span>'                                                                          +
+			'</div>';
+		var button = $(button_html);
 
-        $(button).click(function() {
-            SelectText(code);
-        });
-        $(button).insertBefore(this);
-    });
+		$(button).click(function() {
+			SelectText(code);
+		});
+		$(button).insertBefore(this);
+	});
 });
 </head>
 
@@ -495,7 +495,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/14/cjjlri5g0000igkvy5vqaanr1/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/14/cjjlrjivt000lv4vymmyr23iq/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -514,7 +514,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/14/cjjlri5g0000igkvy5vqaanr1/" itemprop="url">Equations of antiquity 古代的定理</a></h1>
+                <a class="post-title-link" href="/2018/07/14/cjjlrjivt000lv4vymmyr23iq/" itemprop="url">Equations of antiquity 古代的定理</a></h1>
         
 
         <div class="post-meta">
@@ -636,7 +636,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/14/cjjlri5g0000igkvy5vqaanr1/">
+            <a class="btn" href="/2018/07/14/cjjlrjivt000lv4vymmyr23iq/">
               Read more &raquo;
             </a>
           </div>
@@ -696,7 +696,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/14/cjjlri5f40000gkvy2gf66g98/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/14/cjjlrjiux0000v4vy3cagg9iu/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -715,7 +715,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/14/cjjlri5f40000gkvy2gf66g98/" itemprop="url">About this category</a></h1>
+                <a class="post-title-link" href="/2018/07/14/cjjlrjiux0000v4vy3cagg9iu/" itemprop="url">About this category</a></h1>
         
 
         <div class="post-meta">
@@ -837,7 +837,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/14/cjjlri5f40000gkvy2gf66g98/">
+            <a class="btn" href="/2018/07/14/cjjlrjiux0000v4vy3cagg9iu/">
               Read more &raquo;
             </a>
           </div>
@@ -897,7 +897,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/12/cjjlri5gf0010gkvyk78ftixv/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/12/cjjlrjiw8000xv4vyuxo2hhnf/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -916,7 +916,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/12/cjjlri5gf0010gkvyk78ftixv/" itemprop="url">科目四</a></h1>
+                <a class="post-title-link" href="/2018/07/12/cjjlrjiw8000xv4vyuxo2hhnf/" itemprop="url">科目四</a></h1>
         
 
         <div class="post-meta">
@@ -1038,7 +1038,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/12/cjjlri5gf0010gkvyk78ftixv/">
+            <a class="btn" href="/2018/07/12/cjjlrjiw8000xv4vyuxo2hhnf/">
               Read more &raquo;
             </a>
           </div>
@@ -1098,7 +1098,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/11/cjjlri5fk0009gkvykk1v4sa4/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/11/cjjlrjiux0004v4vy6hs1no4e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -1117,7 +1117,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/11/cjjlri5fk0009gkvykk1v4sa4/" itemprop="url">Inside No.9 S01 E01</a></h1>
+                <a class="post-title-link" href="/2018/07/11/cjjlrjiux0004v4vy6hs1no4e/" itemprop="url">Inside No.9 S01 E01</a></h1>
         
 
         <div class="post-meta">
@@ -1239,7 +1239,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/11/cjjlri5fk0009gkvykk1v4sa4/#more" rel="contents">
+            <a class="btn" href="/2018/07/11/cjjlrjiux0004v4vy6hs1no4e/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1299,7 +1299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/09/cjjlri5g0000kgkvygzn2pncp/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/09/cjjlrjivd000bv4vyzyhiehwp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -1318,7 +1318,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/09/cjjlri5g0000kgkvygzn2pncp/" itemprop="url">介绍Python对象类型</a></h1>
+                <a class="post-title-link" href="/2018/07/09/cjjlrjivd000bv4vyzyhiehwp/" itemprop="url">介绍Python对象类型</a></h1>
         
 
         <div class="post-meta">
@@ -1440,7 +1440,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/09/cjjlri5g0000kgkvygzn2pncp/">
+            <a class="btn" href="/2018/07/09/cjjlrjivd000bv4vyzyhiehwp/">
               Read more &raquo;
             </a>
           </div>
@@ -1500,7 +1500,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/09/cjjlri5fk0006gkvywe67tm5p/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/09/cjjlrjivd0006v4vyfn8v422v/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -1519,7 +1519,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/09/cjjlri5fk0006gkvywe67tm5p/" itemprop="url">Overview of Supervised Learning</a></h1>
+                <a class="post-title-link" href="/2018/07/09/cjjlrjivd0006v4vyfn8v422v/" itemprop="url">Overview of Supervised Learning</a></h1>
         
 
         <div class="post-meta">
@@ -1641,7 +1641,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/09/cjjlri5fk0006gkvywe67tm5p/">
+            <a class="btn" href="/2018/07/09/cjjlrjivd0006v4vyfn8v422v/">
               Read more &raquo;
             </a>
           </div>
@@ -1701,7 +1701,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/08/cjjlri5gf0018gkvycnrg0zj1/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/08/cjjlrjiw80016v4vydcgup7z9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -1720,7 +1720,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/08/cjjlri5gf0018gkvycnrg0zj1/" itemprop="url">部署操作系统</a></h1>
+                <a class="post-title-link" href="/2018/07/08/cjjlrjiw80016v4vydcgup7z9/" itemprop="url">部署操作系统</a></h1>
         
 
         <div class="post-meta">
@@ -1842,7 +1842,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/08/cjjlri5gf0018gkvycnrg0zj1/">
+            <a class="btn" href="/2018/07/08/cjjlrjiw80016v4vydcgup7z9/">
               Read more &raquo;
             </a>
           </div>
@@ -1902,7 +1902,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/08/cjjlri5f40002gkvy30wao9bo/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/08/cjjlrjiux0001v4vyv8f7giha/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -1921,7 +1921,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/08/cjjlri5f40002gkvy30wao9bo/" itemprop="url">Artificial Intelligence：Its Roots and Scope</a></h1>
+                <a class="post-title-link" href="/2018/07/08/cjjlrjiux0001v4vyv8f7giha/" itemprop="url">Artificial Intelligence：Its Roots and Scope</a></h1>
         
 
         <div class="post-meta">
@@ -2043,7 +2043,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/08/cjjlri5f40002gkvy30wao9bo/">
+            <a class="btn" href="/2018/07/08/cjjlrjiux0001v4vyv8f7giha/">
               Read more &raquo;
             </a>
           </div>
@@ -2103,7 +2103,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/07/cjjlri5gf0015gkvyvuobclbe/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/07/cjjlrjj1g002cv4vylwqeerg8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -2122,7 +2122,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/07/cjjlri5gf0015gkvyvuobclbe/" itemprop="url">隐马尔可夫模型</a></h1>
+                <a class="post-title-link" href="/2018/07/07/cjjlrjj1g002cv4vylwqeerg8/" itemprop="url">隐马尔可夫模型</a></h1>
         
 
         <div class="post-meta">
@@ -2244,7 +2244,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/07/cjjlri5gf0015gkvyvuobclbe/">
+            <a class="btn" href="/2018/07/07/cjjlrjj1g002cv4vylwqeerg8/">
               Read more &raquo;
             </a>
           </div>
@@ -2304,7 +2304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/06/cjjlri5gf000qgkvy9wl5l8ec/">
+    <link itemprop="mainEntityOfPage" href="http://alina-hui.github.io/2018/07/06/cjjlrjivd000fv4vyxqol100d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alina Hui">
@@ -2323,7 +2323,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/06/cjjlri5gf000qgkvy9wl5l8ec/" itemprop="url">使用Mathjax</a></h1>
+                <a class="post-title-link" href="/2018/07/06/cjjlrjivd000fv4vyxqol100d/" itemprop="url">使用Mathjax</a></h1>
         
 
         <div class="post-meta">
@@ -2445,7 +2445,7 @@
           <!--noindex-->
           <!--
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/06/cjjlri5gf000qgkvy9wl5l8ec/">
+            <a class="btn" href="/2018/07/06/cjjlrjivd000fv4vyxqol100d/">
               Read more &raquo;
             </a>
           </div>

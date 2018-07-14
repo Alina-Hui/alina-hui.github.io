@@ -144,44 +144,44 @@
 
 
   $(document).ready(function () {
-    var SelectText = function(element) {
-        var doc = document
-            , text = element
-            , range, selection
-        ;    
-        if (doc.body.createTextRange) {
-            range = document.body.createTextRange();
-            range.moveToElementText(text);
-            range.select();
-        } else if (window.getSelection) {
-            selection = window.getSelection();        
-            range = document.createRange();
-            range.selectNodeContents(text);
-            selection.removeAllRanges();
-            selection.addRange(range);
-        }
-    };
+	var SelectText = function(element) {
+		var doc = document
+			, text = element
+			, range, selection
+		;    
+		if (doc.body.createTextRange) {
+			range = document.body.createTextRange();
+			range.moveToElementText(text);
+			range.select();
+		} else if (window.getSelection) {
+			selection = window.getSelection();        
+			range = document.createRange();
+			range.selectNodeContents(text);
+			selection.removeAllRanges();
+			selection.addRange(range);
+		}
+	};
 
-    $(".code").each(function() {
-        var code = $(this).get(0);
-        var button_html = 
-            '<div style="position: fixed;'                                                               +
-                        'right: 3%;'                                                                     +
-                        'margin-top: 5px;'                                                               +
-                        'font-family: consolas, Menlo, \'PingFang SC\', \'Microsoft YaHei\', monospace;' +
-                        'font-size: 10px;'                                                               +
-                        'cursor: pointer;'                                                               +
-                        'color: #e31436;'                                                                +
-                        '">'                                                                             +
-            '<span>全选</span>'                                                                          +
-            '</div>';
-        var button = $(button_html);
+	$(".code").each(function() {
+		var code = $(this).get(0);
+		var button_html = 
+			'<div style="position: fixed;'                                                               +
+						'right: 3%;'                                                                     +
+						'margin-top: 5px;'                                                               +
+						'font-family: consolas, Menlo, \'PingFang SC\', \'Microsoft YaHei\', monospace;' +
+						'font-size: 10px;'                                                               +
+						'cursor: pointer;'                                                               +
+						'color: #e31436;'                                                                +
+						'">'                                                                             +
+			'<span>全选</span>'                                                                          +
+			'</div>';
+		var button = $(button_html);
 
-        $(button).click(function() {
-            SelectText(code);
-        });
-        $(button).insertBefore(this);
-    });
+		$(button).click(function() {
+			SelectText(code);
+		});
+		$(button).insertBefore(this);
+	});
 });
 </head>
 
@@ -499,7 +499,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/09/cjjlri5fk0006gkvywe67tm5p/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/09/cjjlrjivd0006v4vyfn8v422v/" itemprop="url">
               
                 <span itemprop="name">Overview of Supervised Learning</span>
               
@@ -527,7 +527,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/08/cjjlri5f40002gkvy30wao9bo/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/08/cjjlrjiux0001v4vyv8f7giha/" itemprop="url">
               
                 <span itemprop="name">Artificial Intelligence：Its Roots and Scope</span>
               
@@ -555,7 +555,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/06/30/cjjlri5fk0008gkvynbipvyf0/" itemprop="url">
+            <a class="post-title-link" href="/2018/06/30/cjjlrjivd0005v4vyx10bo8oj/" itemprop="url">
               
                 <span itemprop="name">Introduction About AI</span>
               

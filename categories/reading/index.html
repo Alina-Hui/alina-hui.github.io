@@ -144,44 +144,44 @@
 
 
   $(document).ready(function () {
-    var SelectText = function(element) {
-        var doc = document
-            , text = element
-            , range, selection
-        ;    
-        if (doc.body.createTextRange) {
-            range = document.body.createTextRange();
-            range.moveToElementText(text);
-            range.select();
-        } else if (window.getSelection) {
-            selection = window.getSelection();        
-            range = document.createRange();
-            range.selectNodeContents(text);
-            selection.removeAllRanges();
-            selection.addRange(range);
-        }
-    };
+	var SelectText = function(element) {
+		var doc = document
+			, text = element
+			, range, selection
+		;    
+		if (doc.body.createTextRange) {
+			range = document.body.createTextRange();
+			range.moveToElementText(text);
+			range.select();
+		} else if (window.getSelection) {
+			selection = window.getSelection();        
+			range = document.createRange();
+			range.selectNodeContents(text);
+			selection.removeAllRanges();
+			selection.addRange(range);
+		}
+	};
 
-    $(".code").each(function() {
-        var code = $(this).get(0);
-        var button_html = 
-            '<div style="position: fixed;'                                                               +
-                        'right: 3%;'                                                                     +
-                        'margin-top: 5px;'                                                               +
-                        'font-family: consolas, Menlo, \'PingFang SC\', \'Microsoft YaHei\', monospace;' +
-                        'font-size: 10px;'                                                               +
-                        'cursor: pointer;'                                                               +
-                        'color: #e31436;'                                                                +
-                        '">'                                                                             +
-            '<span>全选</span>'                                                                          +
-            '</div>';
-        var button = $(button_html);
+	$(".code").each(function() {
+		var code = $(this).get(0);
+		var button_html = 
+			'<div style="position: fixed;'                                                               +
+						'right: 3%;'                                                                     +
+						'margin-top: 5px;'                                                               +
+						'font-family: consolas, Menlo, \'PingFang SC\', \'Microsoft YaHei\', monospace;' +
+						'font-size: 10px;'                                                               +
+						'cursor: pointer;'                                                               +
+						'color: #e31436;'                                                                +
+						'">'                                                                             +
+			'<span>全选</span>'                                                                          +
+			'</div>';
+		var button = $(button_html);
 
-        $(button).click(function() {
-            SelectText(code);
-        });
-        $(button).insertBefore(this);
-    });
+		$(button).click(function() {
+			SelectText(code);
+		});
+		$(button).insertBefore(this);
+	});
 });
 </head>
 
@@ -499,7 +499,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/03/cjjlri5gf000ugkvyuygvzevl/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/03/cjjlrjivt000rv4vyz8ric3nd/" itemprop="url">
               
                 <span itemprop="name">我们的宇宙图像</span>
               

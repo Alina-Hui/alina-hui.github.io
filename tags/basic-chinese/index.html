@@ -144,44 +144,44 @@
 
 
   $(document).ready(function () {
-    var SelectText = function(element) {
-        var doc = document
-            , text = element
-            , range, selection
-        ;    
-        if (doc.body.createTextRange) {
-            range = document.body.createTextRange();
-            range.moveToElementText(text);
-            range.select();
-        } else if (window.getSelection) {
-            selection = window.getSelection();        
-            range = document.createRange();
-            range.selectNodeContents(text);
-            selection.removeAllRanges();
-            selection.addRange(range);
-        }
-    };
+	var SelectText = function(element) {
+		var doc = document
+			, text = element
+			, range, selection
+		;    
+		if (doc.body.createTextRange) {
+			range = document.body.createTextRange();
+			range.moveToElementText(text);
+			range.select();
+		} else if (window.getSelection) {
+			selection = window.getSelection();        
+			range = document.createRange();
+			range.selectNodeContents(text);
+			selection.removeAllRanges();
+			selection.addRange(range);
+		}
+	};
 
-    $(".code").each(function() {
-        var code = $(this).get(0);
-        var button_html = 
-            '<div style="position: fixed;'                                                               +
-                        'right: 3%;'                                                                     +
-                        'margin-top: 5px;'                                                               +
-                        'font-family: consolas, Menlo, \'PingFang SC\', \'Microsoft YaHei\', monospace;' +
-                        'font-size: 10px;'                                                               +
-                        'cursor: pointer;'                                                               +
-                        'color: #e31436;'                                                                +
-                        '">'                                                                             +
-            '<span>全选</span>'                                                                          +
-            '</div>';
-        var button = $(button_html);
+	$(".code").each(function() {
+		var code = $(this).get(0);
+		var button_html = 
+			'<div style="position: fixed;'                                                               +
+						'right: 3%;'                                                                     +
+						'margin-top: 5px;'                                                               +
+						'font-family: consolas, Menlo, \'PingFang SC\', \'Microsoft YaHei\', monospace;' +
+						'font-size: 10px;'                                                               +
+						'cursor: pointer;'                                                               +
+						'color: #e31436;'                                                                +
+						'">'                                                                             +
+			'<span>全选</span>'                                                                          +
+			'</div>';
+		var button = $(button_html);
 
-        $(button).click(function() {
-            SelectText(code);
-        });
-        $(button).insertBefore(this);
-    });
+		$(button).click(function() {
+			SelectText(code);
+		});
+		$(button).insertBefore(this);
+	});
 });
 </head>
 
@@ -499,7 +499,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/09/cjjlri5g0000kgkvygzn2pncp/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/09/cjjlrjivd000bv4vyzyhiehwp/" itemprop="url">
               
                 <span itemprop="name">介绍Python对象类型</span>
               
@@ -527,7 +527,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/08/cjjlri5gf0018gkvycnrg0zj1/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/08/cjjlrjiw80016v4vydcgup7z9/" itemprop="url">
               
                 <span itemprop="name">部署操作系统</span>
               
@@ -555,7 +555,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/07/cjjlri5gf0015gkvyvuobclbe/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/07/cjjlrjj1g002cv4vylwqeerg8/" itemprop="url">
               
                 <span itemprop="name">隐马尔可夫模型</span>
               
@@ -583,7 +583,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/02/cjjlri5gf0019gkvyb515efrl/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/02/cjjlrjiw8000zv4vy5gc9k2ph/" itemprop="url">
               
                 <span itemprop="name">计算机网络概述</span>
               
@@ -611,7 +611,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/01/cjjlri5gf0012gkvyd6mjpxzi/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/01/cjjlrjiw8000tv4vyb5psxibt/" itemprop="url">
               
                 <span itemprop="name">统计学习方法概论</span>
               
@@ -639,7 +639,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/06/28/cjjlri5fk000egkvyol3vtud8/" itemprop="url">
+            <a class="post-title-link" href="/2018/06/28/cjjlrjivd000hv4vyajfgr6u6/" itemprop="url">
               
                 <span itemprop="name">Python使用入门及如何运行</span>
               
