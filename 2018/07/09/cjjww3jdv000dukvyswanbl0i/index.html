@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="Alina Hui">
 <meta property="og:description" content="[PS. 从第四章开始，笔记的内容会缩略很多，以后有空再考虑补上全部的吧。] 为什么使用内置类型Python的核心数据类型在Python程序中处理的每样东西都是一种对象。 Python中没有类型声明，运行的表达式的语法决定了创建和使用的对象的类型。 Python是动态类型(自动跟踪类型而不要求声明代码)的，但它也是强类型语言(只能对一个对象进行适合该类型的有效操作)。 数字打印对象有两种形式：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-22T19:43:20.735Z">
+<meta property="og:updated_time" content="2018-07-22T19:52:49.836Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="介绍Python对象类型">
 <meta name="twitter:description" content="[PS. 从第四章开始，笔记的内容会缩略很多，以后有空再考虑补上全部的吧。] 为什么使用内置类型Python的核心数据类型在Python程序中处理的每样东西都是一种对象。 Python中没有类型声明，运行的表达式的语法决定了创建和使用的对象的类型。 Python是动态类型(自动跟踪类型而不要求声明代码)的，但它也是强类型语言(只能对一个对象进行适合该类型的有效操作)。 数字打印对象有两种形式：">
@@ -517,7 +517,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-07-23T03:43:20+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2018-07-23T03:52:49+08:00">
                 2018-07-23
               </time>
             
@@ -578,7 +578,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,304
+                  1,335
                 </span>
               
 
@@ -661,7 +661,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>diag=[M[i][i] <span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>diag</span><br><span class="line">[<span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>doubles=[c*<span class="number">2</span> <span class="keyword">for</span> c <span class="keyword">in</span> <span class="string">'spam'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>doubles</span><br><span class="line">[<span class="string">'ss'</span>, <span class="string">'pp'</span>, <span class="string">'aa'</span>, <span class="string">'mm'</span>]</span><br></pre></td></tr></table></figure>
 <p>在新版本中，括号中的解析语法也可以用来创建生成器：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>G=(sum(row) <span class="keyword">for</span> row <span class="keyword">in</span> M)                 <span class="comment"># create a generator of row sums</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>next(G)</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>next(G)</span><br><span class="line"><span class="number">15</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(map(sum,M))                          <span class="comment"># map sum over items in M</span></span><br><span class="line">[<span class="number">6</span>, <span class="number">15</span>, <span class="number">24</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>&#123;sum(row) <span class="keyword">for</span> row <span class="keyword">in</span> M&#125;                   <span class="comment"># creat a set of row sums</span></span><br><span class="line">set([<span class="number">24</span>, <span class="number">6</span>, <span class="number">15</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>&#123;i:sum(M[i]) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>)&#125;           <span class="comment"># creats key/value table of row sums</span></span><br><span class="line">&#123;<span class="number">0</span>: <span class="number">6</span>, <span class="number">1</span>: <span class="number">15</span>, <span class="number">2</span>: <span class="number">24</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[ord(x) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">'spaam'</span>]                 <span class="comment"># list of character ordinals</span></span><br><span class="line">[<span class="number">115</span>, <span class="number">112</span>, <span class="number">97</span>, <span class="number">97</span>, <span class="number">109</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>&#123;ord(x) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">'spaam'</span>&#125;                 <span class="comment"># sets remove duplicates</span></span><br><span class="line">set([<span class="number">112</span>, <span class="number">97</span>, <span class="number">115</span>, <span class="number">109</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>&#123;x:ord(x) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">'spaam'</span>&#125;               <span class="comment"># dictionary keys are unique</span></span><br><span class="line">&#123;<span class="string">'a'</span>: <span class="number">97</span>, <span class="string">'p'</span>: <span class="number">112</span>, <span class="string">'s'</span>: <span class="number">115</span>, <span class="string">'m'</span>: <span class="number">109</span>&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><h2 id="映射操作"><a href="#映射操作" class="headerlink" title="映射操作"></a>映射操作</h2><h2 id="重访嵌套"><a href="#重访嵌套" class="headerlink" title="重访嵌套"></a>重访嵌套</h2><h2 id="键的排序：for循环"><a href="#键的排序：for循环" class="headerlink" title="键的排序：for循环"></a>键的排序：for循环</h2><h2 id="迭代和优化"><a href="#迭代和优化" class="headerlink" title="迭代和优化"></a>迭代和优化</h2><h2 id="不存在的键：if测试"><a href="#不存在的键：if测试" class="headerlink" title="不存在的键：if测试"></a>不存在的键：if测试</h2><h1 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h1><h2 id="为什么要用元组"><a href="#为什么要用元组" class="headerlink" title="为什么要用元组"></a>为什么要用元组</h2><h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><h2 id="其它文件类工具"><a href="#其它文件类工具" class="headerlink" title="其它文件类工具"></a>其它文件类工具</h2><h1 id="其他核心类型"><a href="#其他核心类型" class="headerlink" title="其他核心类型"></a>其他核心类型</h1><h2 id="如何破坏代码的灵活性"><a href="#如何破坏代码的灵活性" class="headerlink" title="如何破坏代码的灵活性"></a>如何破坏代码的灵活性</h2><h2 id="用户定义的类"><a href="#用户定义的类" class="headerlink" title="用户定义的类"></a>用户定义的类</h2><h2 id="剩余的内容"><a href="#剩余的内容" class="headerlink" title="剩余的内容"></a>剩余的内容</h2>
+<h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><h2 id="映射操作"><a href="#映射操作" class="headerlink" title="映射操作"></a>映射操作</h2><p>字典编写在大括号中，索引操作的语法和序列相同，但方括号中的元素是键。</p>
+<h2 id="重访嵌套"><a href="#重访嵌套" class="headerlink" title="重访嵌套"></a>重访嵌套</h2><h2 id="键的排序：for循环"><a href="#键的排序：for循环" class="headerlink" title="键的排序：for循环"></a>键的排序：for循环</h2><h2 id="迭代和优化"><a href="#迭代和优化" class="headerlink" title="迭代和优化"></a>迭代和优化</h2><h2 id="不存在的键：if测试"><a href="#不存在的键：if测试" class="headerlink" title="不存在的键：if测试"></a>不存在的键：if测试</h2><h1 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h1><h2 id="为什么要用元组"><a href="#为什么要用元组" class="headerlink" title="为什么要用元组"></a>为什么要用元组</h2><h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><h2 id="其它文件类工具"><a href="#其它文件类工具" class="headerlink" title="其它文件类工具"></a>其它文件类工具</h2><h1 id="其他核心类型"><a href="#其他核心类型" class="headerlink" title="其他核心类型"></a>其他核心类型</h1><h2 id="如何破坏代码的灵活性"><a href="#如何破坏代码的灵活性" class="headerlink" title="如何破坏代码的灵活性"></a>如何破坏代码的灵活性</h2><h2 id="用户定义的类"><a href="#用户定义的类" class="headerlink" title="用户定义的类"></a>用户定义的类</h2><h2 id="剩余的内容"><a href="#剩余的内容" class="headerlink" title="剩余的内容"></a>剩余的内容</h2>
       
     </div>
     
@@ -928,7 +929,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Totol Word Count:7.3k</span>
+  <span class="post-count">Totol Word Count:7.4k</span>
 </div>
         
 
